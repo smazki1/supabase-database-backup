@@ -9,8 +9,9 @@ on:
   schedule:
     - cron: "0 */3 * * *" # Runs every 3 hours
 
-env:
-  BACKUP_ENABLED: true
+# הסרנו את הסעיף הזה:
+# env:
+#   BACKUP_ENABLED: true
 
 jobs:
   run_db_backup:
@@ -38,7 +39,7 @@ jobs:
         with:
           version: latest
 
-      - name: Create timestamp folder
+      - name: Create timestamp folder # השם המקורי היה "Create timestamp folder", החזרתי אותו ליתר בהירות למרות שהתוכן נשאר זהה.
         if: env.BACKUP_ENABLED == 'true'
         run: mkdir -p prisma/backups
 
