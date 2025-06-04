@@ -9,10 +9,6 @@ on:
   schedule:
     - cron: "0 */3 * * *" # Runs every 3 hours
 
-# הסרנו את הסעיף הזה:
-# env:
-#   BACKUP_ENABLED: true
-
 jobs:
   run_db_backup:
     runs-on: ubuntu-latest
